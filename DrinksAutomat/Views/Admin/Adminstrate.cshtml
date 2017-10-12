@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-controller="AdminController">
+    <div class="row form-group product-chooser col-md-8 col-sm-8 col-xs-8">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" ng-repeat="drink in Drinks">
+            <div class="product-chooser-item">
+                <img src="{{drink.picture}}" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="{{drink.name}}">
+                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <input type="text" class="form-control input-sm" ng-model="drink.name"  ng-change="change()">
+                </div>
+
+                <form class="form-inline">
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label for="inputsm" class="control-label col-sm-3">Цена</label>
+                            <input type="text" class="form-control input-sm" ng-model="drink.cost" ng-change="change()" id="inputsm">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputsm" class="control-label col-sm-3">Кол.</label>
+                            <input type="text" class="form-control input-sm" ng-model="drink.count" ng-change="change()" id="inputsm">
+                        </div>
+
+                    </div>
+                </form>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row col-md-4 col-sm-4 col-xs-4 coins-row-bordered">
+        <form class="form-inline">
+            <div class="row coins-row" ng-repeat="naminal in naminals">
+                <input type="checkbox" ng-model="naminal.canUse" ng-change="change()">
+                <button type="button" class="btn btn-warning btn-circle btn-lg" ng-class="{'disabled': naminal.canUse===false}" ng-bind="naminal.num"></button>
+                <input type="text" class="form-control input-sm" ng-model="amount[naminal.num]" ng-change="change()">
+            </div>
+        </form>
+        <div class="row coins-row">
+            <button type="button" class="btn btn-success btn-lg" ng-class="{'disabled': isChanged===false}" ng-click="save()"><i class="fa fa-circle-o-notch fa-spin" ng-show="saving===true"></i> Сохранить</button>
+            <button type="button" class="btn btn-primary btn-lg" ng-class="{'disabled': isChanged===false}" ng-click="cancel()">Отмена</button>
+
+        </div>
+
+    </div>
+</div>
