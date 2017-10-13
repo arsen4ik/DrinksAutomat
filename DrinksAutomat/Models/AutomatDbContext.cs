@@ -15,13 +15,5 @@ namespace DrinksAutomat.Models
         public DbSet<Amount> amounts { get; set; }
         public DbSet<AmountPaid> amountsPaid { get; set; }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Automat>().HasMany(d => d.drinks).WithOptional(o => o.automat);
-        //    modelBuilder.Entity<Automat>().HasMany(d => d.naminals).WithOptional(o => o.automat);
-        //    modelBuilder.Entity<Automat>().HasMany(d => d.amount).WithOptional(o => o.automat);
-        //    modelBuilder.Entity<Automat>().HasMany(d => d.amountPaid).WithOptional(o => o.automat);
-
-        //}
     }
 }

@@ -14,6 +14,5 @@ namespace DrinksAutomat.Models
 
         public string picture { get; set; }
 
-        //public Automat automat { get; set; }
     }
 }

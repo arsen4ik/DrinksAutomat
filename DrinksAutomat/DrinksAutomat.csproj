@@ -1013,7 +1013,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AmountPaid.cs" />
-    <Compile Include="Models\Automat.cs" />
     <Compile Include="Models\AutomatDbContext.cs" />
     <Compile Include="Models\Drink.cs" />
     <Compile Include="Models\Amount.cs" />
